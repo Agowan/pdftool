@@ -3,14 +3,25 @@ This was created when I had to much problems with other known pdf tool libraries
 
 This gem are using following java libs [pdf-merger](https://github.com/Agowan/pdf-merger) and [html-to-pdf](https://github.com/Agowan/html-to-pdf)
 
+## Compatibility
+This gem is tested on rails 4.0.5 with ruby 2.1.1
+
+## Install
+At the moment before any tests are written and tested in production install it from github
+```ruby
+gem 'pdftool', github: "agowan/pdftool"
+```
+
+
 ## Generate html to pdf
 
 ```ruby
 generator = Pdf::Generator.new "<body><strong>Hello World</strong></body>"
 generator.save('path/to/file.pdf')
 ```
-You can also get the file inline.
+
 ```ruby
+# Returns the pdf inline
 generator.to_pdf
 ```
 

@@ -28,7 +28,7 @@ module Pdf
     end
 
     def jar_path
-      File.join(root_path, 'ext', 'PdfMerger.jar')
+      File.join(Pdf.root_path, 'ext', 'PdfMerger.jar')
     end
   end
 
