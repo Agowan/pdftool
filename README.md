@@ -15,8 +15,15 @@ gem 'pdftool', github: "agowan/pdftool"
 
 ## Generate html to pdf
 
+Without fonts
 ```ruby
 generator = Pdf::Generator.new "<body><strong>Hello World</strong></body>"
+generator.save('path/to/file.pdf')
+```
+
+With fonts
+```ruby
+generator = Pdf::Generator.new "<body><strong>Hello World</strong></body>", "path/to/font1.ttf", "path/to/font2.ttf"
 generator.save('path/to/file.pdf')
 ```
 

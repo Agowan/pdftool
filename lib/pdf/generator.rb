@@ -11,12 +11,13 @@ module Pdf
     # Or you can save it to a file
     # - generator.save('path/to/file.pdf')
 
-    def initialize(html)
-      @html = html
+    def initialize(html, *args)
+      @html  = html
+      @font_paths = args
     end
 
     def to_pdf
-      IO.popen "java -jar #{jar_path}", "r+" do |cmd|
+      IO.popen "java -jar #{jar_path} #{@font_paths.join(' ')}", "r+" do |cmd|
         cmd.write @html
         cmd.close_write
         pdf = cmd.read
